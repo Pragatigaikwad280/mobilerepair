@@ -8,6 +8,7 @@ echo "<script>window.open('login.php','_self')</script>";
 else {
   $get_boys = "SELECT admin_name,admin_id FROM admins where admin_role='delivery_boy'";
   $run_boy = mysqli_query($con,$get_boys);
+  $run_boy1 = mysqli_query($con,$get_boys);
 ?>
 
 <style>
@@ -33,9 +34,9 @@ else {
       <label>Delivery Boy</label>
         <select  name="boy_name" id="boy_name">
       <?php 
-        while($boy = mysqli_fetch_array($run_boy)){
-          $namee=$boy['admin_name'];
-          $boy_id=$boy['admin_id'];
+        while($boy1 = mysqli_fetch_array($run_boy1)){
+          $namee=$boy1['admin_name'];
+          $boy_id=$boy1['admin_id'];
 
           echo "<option value='$boy_id'>" .$namee . "</option>";
           }
